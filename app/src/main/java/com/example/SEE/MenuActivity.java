@@ -31,7 +31,7 @@ public class MenuActivity extends thread{
     TextToSpeech tts;
     SpeechRecognizer speechRecog;
     String choice;
-    String choices[]={"general","object","custom"};
+    String choices[]={"general","object","custom","home","personal"};
     ImageButton btn;
     StorageReference storageRef;
     StorageReference videoRef;
@@ -137,7 +137,7 @@ public class MenuActivity extends thread{
 
                 else{
                     speak("Click on the screen and state your choice to proceed to general, " +
-                            "personal,navigation or new object mode");
+                            "personal,home or new object mode");
 
                 }
             }
@@ -165,7 +165,7 @@ public class MenuActivity extends thread{
 
                 dispatchTakeVideoIntent();
         }
-        else if (result_message.indexOf("navigation") != -1) {
+        else if (result_message.indexOf("home") != -1) {
                 obstacleprocced();
         }
 
