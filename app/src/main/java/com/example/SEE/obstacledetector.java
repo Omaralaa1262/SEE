@@ -48,7 +48,7 @@ public class obstacledetector extends CameraActivity implements OnImageAvailable
     private static final boolean SAVE_PREVIEW_BITMAP = false;
     private static final float TEXT_SIZE_DIP = 10;
     OverlayView trackingOverlay;
-    private Integer sensorOrientation;
+
 
     private Classifier detector;
 
@@ -56,7 +56,7 @@ public class obstacledetector extends CameraActivity implements OnImageAvailable
     private Bitmap rgbFrameBitmap = null;
     private Bitmap croppedBitmap = null;
     private Bitmap cropCopyBitmap = null;
-
+    private Integer sensorOrientation;
     private boolean computingDetection = false;
 
     private long timestamp = 0;
