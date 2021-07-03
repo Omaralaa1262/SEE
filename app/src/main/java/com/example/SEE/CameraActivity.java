@@ -749,6 +749,8 @@ public abstract class CameraActivity extends AppCompatActivity
         }
     }
     void getDistance(RectF location, String title, double y) {
+        
+
         double avgWidth;
         myCounter++;
         if (avgWidthMap.containsKey(title)) {
@@ -768,7 +770,7 @@ public abstract class CameraActivity extends AppCompatActivity
         if (myCounter == 3) {
             vibrator.vibrate(100);
 
-            speak("object Found ");
+            speak("Object Found Keep Phone Steady");
         }
         if (myCounter == 20) {
 
@@ -789,6 +791,7 @@ public abstract class CameraActivity extends AppCompatActivity
             myCounter=0;
         }
     }
+
 
 
 
