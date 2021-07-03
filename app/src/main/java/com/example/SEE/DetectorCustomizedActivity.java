@@ -199,7 +199,7 @@ public class DetectorCustomizedActivity extends CameraActivity implements OnImag
                                     cropToFrameTransform.mapRect(location);
                                     result.setLocation(location);
                                     mappedRecognitions.add(result);
-                                    getDistance(result.getLocation(),result_arr.get(0),x);
+                                    getDistance(result.getLocation(),result.getTitle(),result_arr.get(0),x);
                                 }
                         }
 

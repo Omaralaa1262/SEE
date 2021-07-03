@@ -748,7 +748,7 @@ public abstract class CameraActivity extends AppCompatActivity
             myCounter=0;
         }
     }
-    void getDistance(RectF location, String title, double y) {
+    void getDistance(RectF location, String title,String object_name, double y) {
 
 
         double avgWidth;
@@ -783,7 +783,7 @@ public abstract class CameraActivity extends AppCompatActivity
 
             distance = ((avgWidth) * (focalLength * 1000)) / (location.width());
             int value = (int)Math.round(distance/12);
-            speak(title+" is "+value+" steps to the "+orientation);
+            speak(object_name+" is "+value+" steps to the "+orientation);
 
         }
         if(myCounter==100)
