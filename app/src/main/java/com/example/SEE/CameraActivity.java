@@ -80,7 +80,7 @@ public abstract class CameraActivity extends AppCompatActivity
     private int yRowStride;
     private Runnable postInferenceCallback;
     private Runnable imageConverter;
-    public List<String> result_arr;
+
     private LinearLayout bottomSheetLayout;
     private LinearLayout gestureLayout;
     private BottomSheetBehavior sheetBehavior;
@@ -633,7 +633,7 @@ public abstract class CameraActivity extends AppCompatActivity
 
                 @Override
                 public void onResults(Bundle results) {
-                    result_arr = results.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
+                    List<String> result_arr = results.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
                     processResult(result_arr.get(0));
                     headerObject.setText(result_arr.get(0));
                     searcher = result_arr.get(0).toLowerCase();
@@ -748,7 +748,7 @@ public abstract class CameraActivity extends AppCompatActivity
             myCounter=0;
         }
     }
-    void getDistance(RectF location, String title,String object_name, double y) {
+    void getDistance(RectF location, String title, double y) {
 
 
         double avgWidth;
@@ -783,7 +783,7 @@ public abstract class CameraActivity extends AppCompatActivity
 
             distance = ((avgWidth) * (focalLength * 1000)) / (location.width());
             int value = (int)Math.round(distance/12);
-            speak(object_name+" is "+value+" steps to the "+orientation);
+            speak(title+" is "+value+" steps to the "+orientation);
 
         }
         if(myCounter==100)
