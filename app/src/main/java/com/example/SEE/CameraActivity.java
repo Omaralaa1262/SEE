@@ -768,9 +768,9 @@ public abstract class CameraActivity extends AppCompatActivity
         if (myCounter == 3) {
             vibrator.vibrate(100);
 
-            speak("obstacle Found hurry up");
+            speak("object Found ");
         }
-        /*if (myCounter == 20) {
+        if (myCounter == 20) {
 
             if (y < 100){
                 orientation = "slight reft";
@@ -783,7 +783,7 @@ public abstract class CameraActivity extends AppCompatActivity
             int value = (int)Math.round(distance/12);
             speak(title+" is "+value+" steps to the "+orientation);
 
-        }*/
+        }
         if(myCounter==100)
         {
             myCounter=0;

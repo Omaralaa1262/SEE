@@ -105,7 +105,7 @@ public class MenuActivity extends thread{
                             processResult(result_arr.get(0));
 
                         }
-                    speak("Please state your choice clearly");
+                    // speak("Please state your choice clearly");
 
                 }
 
@@ -137,7 +137,7 @@ public class MenuActivity extends thread{
 
                 else{
                     speak("Click on the screen and state your choice to proceed to general, " +
-                            "personal,home or new object mode");
+                            "personal or object mode");
 
                 }
             }
