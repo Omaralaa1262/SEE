@@ -80,7 +80,7 @@ public abstract class CameraActivity extends AppCompatActivity
     private int yRowStride;
     private Runnable postInferenceCallback;
     private Runnable imageConverter;
-
+    public List<String> result_arr;
     private LinearLayout bottomSheetLayout;
     private LinearLayout gestureLayout;
     private BottomSheetBehavior sheetBehavior;
@@ -633,7 +633,7 @@ public abstract class CameraActivity extends AppCompatActivity
 
                 @Override
                 public void onResults(Bundle results) {
-                    List<String> result_arr = results.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
+                    result_arr = results.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
                     processResult(result_arr.get(0));
                     headerObject.setText(result_arr.get(0));
                     searcher = result_arr.get(0).toLowerCase();
