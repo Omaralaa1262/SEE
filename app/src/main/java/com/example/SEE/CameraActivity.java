@@ -636,8 +636,8 @@ public abstract class CameraActivity extends AppCompatActivity
                 public void onResults(Bundle results) {
                     List<String> result_arr = results.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
                     processResult(result_arr.get(0));
-                    Intent i = new Intent(CameraActivity.this, DetectorCustomizedActivity.class);
-                    i.putExtra("name", result_arr.get(0));
+                   /* Intent i = new Intent(CameraActivity.this, DetectorCustomizedActivity.class);
+                    i.putExtra("name", result_arr.get(0));*/
                     headerObject.setText(result_arr.get(0));
                     searcher = result_arr.get(0).toLowerCase();
 
@@ -751,7 +751,7 @@ public abstract class CameraActivity extends AppCompatActivity
             myCounter=0;
         }
     }
-    void getDistance(RectF location, String title,String name, double y) {
+    void getDistance(RectF location, String title, double y) {
 
 
         double avgWidth;
@@ -786,7 +786,7 @@ public abstract class CameraActivity extends AppCompatActivity
 
             distance = ((avgWidth) * (focalLength * 1000)) / (location.width());
             int value = (int)Math.round(distance/12);
-            speak(name+" is "+value+" steps to the "+orientation);
+            speak("object is "+value+" steps to the "+orientation);
 
         }
         if(myCounter==100)
