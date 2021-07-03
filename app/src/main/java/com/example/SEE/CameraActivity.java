@@ -751,9 +751,8 @@ public abstract class CameraActivity extends AppCompatActivity
             myCounter=0;
         }
     }
-    void getDistance(RectF location, String title, double y) {
-        Bundle extras = getIntent().getExtras();
-        String name= extras.getString("name");
+    void getDistance(RectF location, String title,String name, double y) {
+
 
         double avgWidth;
         myCounter++;

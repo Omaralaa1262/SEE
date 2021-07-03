@@ -9,6 +9,7 @@ import android.graphics.Paint.Style;
 import android.graphics.RectF;
 import android.graphics.Typeface;
 import android.media.ImageReader.OnImageAvailableListener;
+import android.os.Bundle;
 import android.os.SystemClock;
 import android.util.Size;
 import android.util.TypedValue;
@@ -199,7 +200,9 @@ public class DetectorCustomizedActivity extends CameraActivity implements OnImag
                                     cropToFrameTransform.mapRect(location);
                                     result.setLocation(location);
                                     mappedRecognitions.add(result);
-                                    getDistance(result.getLocation(),result.getTitle(),x);
+                                    Bundle extras = getIntent().getExtras();
+                                    String name= extras.getString("name");
+                                    getDistance(result.getLocation(),result.getTitle(),name,x);
                                 }
                         }
 
