@@ -31,7 +31,7 @@ public class MenuActivity extends thread{
     TextToSpeech tts;
     SpeechRecognizer speechRecog;
     String choice;
-    String choices[]={"general","object","custom","home","personal"};
+    String choices[]={"general","object","personal"};
     ImageButton btn;
     StorageReference storageRef;
     StorageReference videoRef;
@@ -165,9 +165,7 @@ public class MenuActivity extends thread{
 
                 dispatchTakeVideoIntent();
         }
-        else if (result_message.indexOf("home") != -1) {
-                obstacleprocced();
-        }
+
 
         speechRecog.stopListening();
 
@@ -175,10 +173,6 @@ public class MenuActivity extends thread{
 
     private void ProceedToPersonal() {
         Intent i = new Intent(this, DetectorCustomizedActivity.class);
-        startActivity(i);
-    }
-    private void obstacleprocced() {
-        Intent i = new Intent(this, obstacledetector.class);
         startActivity(i);
     }
 

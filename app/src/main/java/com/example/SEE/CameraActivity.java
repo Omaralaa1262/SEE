@@ -704,7 +704,7 @@ public abstract class CameraActivity extends AppCompatActivity
         }
     }
 
-    void getDistance(RectF location, String title, double y) {
+    void getDistancefornavigation(RectF location, String title, double y) {
 
 
 
@@ -718,7 +718,7 @@ public abstract class CameraActivity extends AppCompatActivity
         double distance;
         String orientation="Front";
         double imageHieght = Math.round((location.top - location.bottom) * 0.0264583333 * 10) / 10.0;
-        System.out.println("imageheight" + imageHieght);
+
         Log.d("imageheight", "imageheight: " + imageHieght);
         focalLength = ((LegacyCameraConnectionFragment) getFragmentManager().findFragmentById(R.id.container)).getFocalLength();
 //        Toast.makeText(this, "distance: " + ((avgWidth) * (focalLength * 1000)) / (location.width()), Toast.LENGTH_SHORT).show();
@@ -727,12 +727,12 @@ public abstract class CameraActivity extends AppCompatActivity
         if (myCounter == 3) {
             vibrator.vibrate(100);
 
-            speak("Object Found Keep Phone Steady");
+            speak("obstacle Found     ,");
         }
         if (myCounter == 20) {
 
             if (y < 100){
-                orientation = "slight reft";
+                orientation = "slight left";
             }
             else if(y > 200){
                 orientation = "slight right";
@@ -740,7 +740,7 @@ public abstract class CameraActivity extends AppCompatActivity
 
             distance = ((avgWidth) * (focalLength * 1000)) / (location.width());
             int value = (int)Math.round(distance/12);
-            speak(title+" is "+value+" steps to the "+orientation);
+            speak("obstacle is "+value+" steps to the "+orientation);
 
         }
         if(myCounter==100)
@@ -748,7 +748,7 @@ public abstract class CameraActivity extends AppCompatActivity
             myCounter=0;
         }
     }
-    void getDistancefornavigation(RectF location, String title, double y) {
+    void getDistance(RectF location, String title, double y) {
         double avgWidth;
         myCounter++;
         if (avgWidthMap.containsKey(title)) {

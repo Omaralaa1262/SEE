@@ -223,6 +223,8 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
                       cropToFrameTransform.mapRect(location);
                       result.setLocation(location);
                       mappedRecognitions.add(result);
+                      double location_left = location.left;
+                      getDistancefornavigation(result.getLocation(),result.getTitle(),location_left);
                     }
                   }
                   else
@@ -237,7 +239,7 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
                       cropToFrameTransform.mapRect(location);
                       result.setLocation(location);
                       mappedRecognitions.add(result);
-                      getDistance(result.getLocation(),result.getTitle(),x);
+                      getDistancefornavigation(result.getLocation(),result.getTitle(),x);
                     }
                   }
                 }
