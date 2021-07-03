@@ -749,7 +749,7 @@ public abstract class CameraActivity extends AppCompatActivity
         }
     }
     void getDistance(RectF location, String title, double y) {
-        
+
 
         double avgWidth;
         myCounter++;
@@ -775,10 +775,10 @@ public abstract class CameraActivity extends AppCompatActivity
         if (myCounter == 20) {
 
             if (y < 100){
-                orientation = "slight reft";
+                orientation = "slight right";
             }
             else if(y > 200){
-                orientation = "slight right";
+                orientation = "slight left";
             }
 
             distance = ((avgWidth) * (focalLength * 1000)) / (location.width());
