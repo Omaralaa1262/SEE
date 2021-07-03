@@ -25,6 +25,7 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Trace;
 import android.os.Vibrator;
+import android.provider.MediaStore;
 import android.speech.RecognitionListener;
 import android.speech.RecognizerIntent;
 import android.speech.SpeechRecognizer;
@@ -635,6 +636,8 @@ public abstract class CameraActivity extends AppCompatActivity
                 public void onResults(Bundle results) {
                     List<String> result_arr = results.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
                     processResult(result_arr.get(0));
+                    Intent i = new Intent(CameraActivity.this, DetectorCustomizedActivity.class);
+                    i.putExtra("name", result_arr.get(0));
                     headerObject.setText(result_arr.get(0));
                     searcher = result_arr.get(0).toLowerCase();
 
@@ -749,7 +752,8 @@ public abstract class CameraActivity extends AppCompatActivity
         }
     }
     void getDistance(RectF location, String title, double y) {
-
+        Bundle extras = getIntent().getExtras();
+        String name= extras.getString("name");
 
         double avgWidth;
         myCounter++;
@@ -783,7 +787,7 @@ public abstract class CameraActivity extends AppCompatActivity
 
             distance = ((avgWidth) * (focalLength * 1000)) / (location.width());
             int value = (int)Math.round(distance/12);
-            speak(title+" is "+value+" steps to the "+orientation);
+            speak(name+" is "+value+" steps to the "+orientation);
 
         }
         if(myCounter==100)
