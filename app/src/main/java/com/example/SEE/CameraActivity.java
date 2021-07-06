@@ -132,6 +132,9 @@ public abstract class CameraActivity extends AppCompatActivity
         searcher="";
         myCounter=0;
 
+        headerObject = findViewById(R.id.headerObject);
+        headerObject.setText("General");
+
         avgWidthMap.put("laptop",15.6);
         avgWidthMap.put("person",14.5);
         avgWidthMap.put("tv",43.0);
