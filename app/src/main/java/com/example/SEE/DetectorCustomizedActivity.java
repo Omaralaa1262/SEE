@@ -191,6 +191,7 @@ public class DetectorCustomizedActivity extends CameraActivity implements OnImag
                                 new LinkedList<Classifier.Recognition>();
 
                         for (final Classifier.Recognition result : results) {
+                            if(count_obj>0)
                             if(results.contains(search_object_name)){
                             final RectF location = result.getLocation();
                                 if (location != null && result.getConfidence() > minimumConfidence) {
@@ -203,7 +204,7 @@ public class DetectorCustomizedActivity extends CameraActivity implements OnImag
                                     cropToFrameTransform.mapRect(location);
                                     result.setLocation(location);
                                     mappedRecognitions.add(result);
-                                    if(count_obj>0)
+
                                     getDistance(result.getLocation(),result.getTitle(),x);
 
                                 }}
