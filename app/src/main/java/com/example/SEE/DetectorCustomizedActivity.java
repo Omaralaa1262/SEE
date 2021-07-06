@@ -39,7 +39,7 @@ public class DetectorCustomizedActivity extends CameraActivity implements OnImag
     // Configuration values for the prepackaged SSD model.
     private static final int TF_OD_API_INPUT_SIZE = 300;
     private static final boolean TF_OD_API_IS_QUANTIZED = false;
-    private static final String TF_OD_API_MODEL_FILE = "detectD.tflite";
+    private static final String TF_OD_API_MODEL_FILE = "detect.tflite";
     private static final String TF_OD_API_LABELS_FILE = "file:///android_asset/Label.txt";
     private static final DetectorMode MODE = DetectorMode.TF_OD_API;
     // Minimum detection confidence to track a detection.
@@ -194,7 +194,7 @@ public class DetectorCustomizedActivity extends CameraActivity implements OnImag
 
                            // if(results.contains(search_object_name)){
                             final RectF location = result.getLocation();
-                                if (location != null && result.getConfidence() > minimumConfidence) {
+                                if (location != null && result.getConfidence() > minimumConfidence && result.getTitle().equals(searcher)) {
 
                                     canvas.drawRect(location, paint);
                                     if(location.width()>200){
