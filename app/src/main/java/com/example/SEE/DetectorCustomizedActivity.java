@@ -68,7 +68,8 @@ public class DetectorCustomizedActivity extends CameraActivity implements OnImag
     private MultiBoxTracker tracker;
 
     private BorderedText borderedText;
-
+    Bundle bundle = getIntent().getExtras();
+    String search_object_name =bundle.getString("name");
     @Override
     public void onPreviewSizeChosen(final Size size, final int rotation) {
         final float textSizePx =
@@ -190,8 +191,10 @@ public class DetectorCustomizedActivity extends CameraActivity implements OnImag
                                 new LinkedList<Classifier.Recognition>();
 
                         for (final Classifier.Recognition result : results) {
+                            if(results.contains(search_object_name)){
                             final RectF location = result.getLocation();
                                 if (location != null && result.getConfidence() > minimumConfidence) {
+
                                     canvas.drawRect(location, paint);
                                     if(location.width()>200){
                                         vibrator.vibrate(100);
@@ -203,7 +206,7 @@ public class DetectorCustomizedActivity extends CameraActivity implements OnImag
                                     if(count_obj>0)
                                     getDistance(result.getLocation(),result.getTitle(),x);
 
-                                }
+                                }}
                         }
 
                         tracker.trackResults(mappedRecognitions, currTimestamp);
