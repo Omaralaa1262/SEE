@@ -131,7 +131,7 @@ public abstract class CameraActivity extends AppCompatActivity
         bottomSheetArrowImageView = findViewById(R.id.bottom_sheet_arrow);
         searcher="";
         myCounter=0;
-        
+
         avgWidthMap.put("laptop",15.6);
         avgWidthMap.put("person",14.5);
         avgWidthMap.put("tv",43.0);

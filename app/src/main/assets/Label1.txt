@@ -1,2 +1,6 @@
 ??
 cover
+labtop
+chair
+cup
+keybourd
