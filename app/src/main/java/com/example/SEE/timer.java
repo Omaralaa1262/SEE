@@ -204,7 +204,7 @@ public void countdown()
 //            startActivity(intent);
 
                 SmsManager smsManager = SmsManager.getDefault();
-                smsManager.sendTextMessage("0505019000524", null, "Latitude is " + latV + "Longitude is " + lonV, null, null);
+                smsManager.sendTextMessage("01143538937", null, "Latitude is " + latV + "Longitude is " + lonV, null, null);
                 Toast.makeText(getApplicationContext(), "Your sms has successfully sent!",
                        Toast.LENGTH_LONG).show();
 

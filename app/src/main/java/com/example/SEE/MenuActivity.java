@@ -31,7 +31,7 @@ public class MenuActivity extends thread{
     TextToSpeech tts;
     SpeechRecognizer speechRecog;
     String choice;
-    String choices[]={"general","object","personal"};
+    String choices[]={"general","object","search"};
     ImageButton btn;
     StorageReference storageRef;
     StorageReference videoRef;
@@ -137,7 +137,7 @@ public class MenuActivity extends thread{
 
                 else{
                     speak("Click on the screen and state your choice to proceed to general, " +
-                            "personal or object mode");
+                            "search or object mode");
 
                 }
             }
@@ -157,7 +157,7 @@ public class MenuActivity extends thread{
         if (result_message.indexOf("general") != -1) {
                 ProceedToDetection();
 
-        } else if (result_message.indexOf("personal") != -1) {
+        } else if (result_message.indexOf("search") != -1) {
             if(mode!=2)
                 ProceedToPersonal();
 

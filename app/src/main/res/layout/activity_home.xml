@@ -14,6 +14,6 @@
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#00201010"
-        android:src="@drawable/eye2" />
+        android:background="@color/colorWhite"
+        android:src="@drawable/edited2" />
 </LinearLayout>

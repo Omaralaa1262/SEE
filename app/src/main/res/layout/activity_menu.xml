@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/linear2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -14,6 +15,6 @@
         android:id="@+id/menuBtn"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#00201010"
-        android:src="@drawable/eye2" />
+        android:background="@color/colorWhite"
+        android:src="@drawable/edited3" />
 </LinearLayout>
