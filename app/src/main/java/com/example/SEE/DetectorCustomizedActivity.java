@@ -68,8 +68,8 @@ public class DetectorCustomizedActivity extends CameraActivity implements OnImag
     private MultiBoxTracker tracker;
 
     private BorderedText borderedText;
-    Bundle bundle = getIntent().getExtras();
-    String search_object_name =bundle.getString("name");
+
+    String search_object_name =getIntent().getExtras().getString("name");
     @Override
     public void onPreviewSizeChosen(final Size size, final int rotation) {
         final float textSizePx =
