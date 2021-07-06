@@ -638,8 +638,8 @@ public abstract class CameraActivity extends AppCompatActivity
                 public void onResults(Bundle results) {
                     List<String> result_arr = results.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
                     processResult(result_arr.get(0));
-                    Intent i = new Intent(CameraActivity.this, DetectorCustomizedActivity.class);
-                    i.putExtra("name_object", result_arr.get(0));
+                    //Intent i = new Intent(CameraActivity.this, DetectorCustomizedActivity.class);
+                    //i.putExtra("name_object", result_arr.get(0));
                     headerObject.setText(result_arr.get(0));
                     searcher = result_arr.get(0).toLowerCase();
 
@@ -785,7 +785,7 @@ public abstract class CameraActivity extends AppCompatActivity
 
             distance = ((avgWidth) * (focalLength * 1000)) / (location.width());
             int value = (int)Math.round(distance/12);
-            speak("object is "+value+" steps to the "+orientation);
+            speak(searcher+" is "+value+" steps to the "+orientation);
 
         }
         if(myCounter==100)
