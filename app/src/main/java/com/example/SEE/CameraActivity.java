@@ -708,9 +708,6 @@ public abstract class CameraActivity extends AppCompatActivity
     }
 
     void getDistancefornavigation(RectF location, String title, double y) {
-
-
-
         double avgWidth;
         myCounter++;
         if (avgWidthMap.containsKey(title)) {

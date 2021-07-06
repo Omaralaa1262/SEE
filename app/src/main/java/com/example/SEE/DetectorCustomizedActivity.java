@@ -191,7 +191,7 @@ public class DetectorCustomizedActivity extends CameraActivity implements OnImag
 
                         for (final Classifier.Recognition result : results) {
                             final RectF location = result.getLocation();
-                                if (location != null && result.getConfidence() >= minimumConfidence) {
+                                if (location != null && result.getConfidence() > minimumConfidence) {
                                     canvas.drawRect(location, paint);
                                     if(location.width()>200){
                                         vibrator.vibrate(100);
