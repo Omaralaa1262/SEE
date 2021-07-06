@@ -133,7 +133,7 @@ public abstract class CameraActivity extends AppCompatActivity
         myCounter=0;
 
         headerObject = findViewById(R.id.headerObject);
-        headerObject.setText("General");
+        
 
         avgWidthMap.put("laptop",15.6);
         avgWidthMap.put("person",14.5);
