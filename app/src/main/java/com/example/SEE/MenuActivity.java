@@ -178,6 +178,7 @@ public class MenuActivity extends thread{
 
     public void ProceedToDetection(){
         Intent i = new Intent(this, DetectorActivity.class);
+
         startActivity(i);
     }
 

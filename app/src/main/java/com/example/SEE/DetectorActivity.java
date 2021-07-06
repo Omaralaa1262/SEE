@@ -224,7 +224,9 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
                       result.setLocation(location);
                       mappedRecognitions.add(result);
                       double location_left = location.left;
+                      if(count_obstacle>0)
                       getDistancefornavigation(result.getLocation(),result.getTitle(),location_left);
+                      count_obstacle++;
                     }
                   }
                   else
@@ -239,7 +241,9 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
                       cropToFrameTransform.mapRect(location);
                       result.setLocation(location);
                       mappedRecognitions.add(result);
-                      getDistancefornavigation(result.getLocation(),result.getTitle(),x);
+                      if(count_obstacle>0)
+                        getDistancefornavigation(result.getLocation(),result.getTitle(),x);
+                      count_obstacle++;
                     }
                   }
                 }

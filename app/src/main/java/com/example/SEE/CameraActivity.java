@@ -66,6 +66,7 @@ public abstract class CameraActivity extends AppCompatActivity
         CompoundButton.OnCheckedChangeListener,
         View.OnClickListener {
     int count_obj=0;
+    int count_obstacle=0;
     private static final int PERMISSIONS_REQUEST = 1;
 
     private static final String PERMISSION_CAMERA = Manifest.permission.CAMERA;
@@ -130,10 +131,7 @@ public abstract class CameraActivity extends AppCompatActivity
         bottomSheetArrowImageView = findViewById(R.id.bottom_sheet_arrow);
         searcher="";
         myCounter=0;
-
-        headerObject = findViewById(R.id.headerObject);
-        headerObject.setText("General");
-
+        
         avgWidthMap.put("laptop",15.6);
         avgWidthMap.put("person",14.5);
         avgWidthMap.put("tv",43.0);
