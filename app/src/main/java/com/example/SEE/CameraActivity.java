@@ -639,7 +639,7 @@ public abstract class CameraActivity extends AppCompatActivity
                     List<String> result_arr = results.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
                     processResult(result_arr.get(0));
                     Intent i = new Intent(CameraActivity.this, DetectorCustomizedActivity.class);
-                    i.putExtra("name", result_arr.get(0));
+                    i.putExtra("name_object", result_arr.get(0));
                     headerObject.setText(result_arr.get(0));
                     searcher = result_arr.get(0).toLowerCase();
 
