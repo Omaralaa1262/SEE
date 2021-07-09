@@ -734,10 +734,10 @@ public abstract class CameraActivity extends AppCompatActivity
         if (myCounter == 20) {
 
             if (y < 100){
-                orientation = "slight left";
+                orientation = "slight right";
             }
             else if(y > 200){
-                orientation = "slight right";
+                orientation = "slight left";
             }
 
             distance = ((avgWidth) * (focalLength * 1000)) / (location.width());
@@ -777,10 +777,10 @@ public abstract class CameraActivity extends AppCompatActivity
         if (myCounter == 20) {
 
             if (y < 100){
-                orientation = "slight right";
+                orientation = "slight left";
             }
             else if(y > 200){
-                orientation = "slight left";
+                orientation = "slight right";
             }
 
             distance = ((avgWidth) * (focalLength * 1000)) / (location.width());
